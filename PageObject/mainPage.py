@@ -1,0 +1,12 @@
+from Tools.driver import Driver
+
+class MainPage(Driver):
+
+    def schedule_button(self):
+        return self.driver(resourceId="com.pubinfo.sfim:id/tab_title_label", text="日程")
+
+    def message_button(self):
+        return self.driver(resourceId="com.pubinfo.sfim:id/tab_title_label", text="消息")
+
+    def click_schedule_button(self):
+        self.schedule_button().click()
