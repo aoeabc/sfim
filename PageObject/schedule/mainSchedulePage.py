@@ -8,6 +8,14 @@ class MainSchedulePage(Driver):
     def new_meeting_button(self):
         return self.driver(resourceId="com.pubinfo.sfim:id/iv_pop_meeting")
 
+    def guide(self):
+        return self.driver(resourceId="com.pubinfo.sfim:id/iv_pop_guide")
+
     def new_meeting_click(self):
+        try:
+            self.guide().click()
+        except:
+            pass
+
         self.new_button().click()
         self.new_meeting_button().click()
